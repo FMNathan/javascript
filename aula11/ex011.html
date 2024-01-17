@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conhecendo sua Nacionalidade</title>
+    <style>
+        body{
+            *{
+                padding: 0;
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                padding: 20px 0px 0px 0px;
+            }
+
+            background-color: #041ca39a;
+            h1{
+                font-size: 2rem;
+                text-align: left;
+            }
+            input{
+                border-radius: 10px;
+                width: auto;
+                padding: 5px 5px 5px 5px;
+                outline: none;
+                border: 1px solid black;    
+                align-items: center;
+            }
+            #pais:hover{
+                background-color: lightgray;
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    <h2>Qual a sua Nacionalidade?</h2> <input type="text" name="nationtxt" id="nationtxt">
+    <input type="button" value="Veja aqui" id="pais" onclick="descubra()">
+    <div id="result"></div>
+    <script>
+        var nacao  = window.document.getElementById('nationtxt')
+        var result = window.document.querySelector('div#result')
+
+        function descubra(){
+            console.log(nacao.value)
+            if ( nacao.value === 'Brasil'){
+            return result.innerHTML = `Você é Brasileiro`
+            }else{
+            return result.innerHTML = `Você é Estrangeiro`
+            }
+        }
+    </script>
+</body>
+</html>

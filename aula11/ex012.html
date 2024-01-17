@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your age</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Qual sua idade?</h1>
+    <h2>Somente maiores de 18 anos podem continuar...</h2> <input type="number" name="agetxt" id="agetxt">
+    <input type="button" value="Descubra" id="idade" onclick="veridade()">
+    <div id="resultado"></div>
+    <script>
+        function veridade(){
+            var age = window.document.querySelector('input#agetxt')
+            var resultado = window.document.querySelector('div#resultado')
+            var idade = Number(age.value)
+
+            resultado.innerHTML = `<p>Sua idade é de <strong>${idade} anos.</strong></p>`
+            if(idade >= 18){
+               return resultado.innerHTML += `<p> Você está permitido continuar.</p>`
+            } else{
+                return resultado.innerHTML += `Acesso <strong>NEGADO</strong>`
+            }
+        }
+    </script>
+</body>
+</html>
